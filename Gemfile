@@ -48,4 +48,7 @@ end
 #clearance for user management
 gem "clearance"
 
+#privacy
+gem "figaro"
+
 
