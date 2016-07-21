@@ -58,3 +58,7 @@ gem 'omniauth-facebook'
 #geolocation
 gem 'geocoder'
 
+#images
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'mini_magick'
+
