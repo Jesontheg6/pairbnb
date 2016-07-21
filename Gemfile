@@ -62,3 +62,7 @@ gem 'geocoder'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 
+#elastic search
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+

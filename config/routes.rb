@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
-  resources :users, only: [:show, :edit, :update, :destroy] 
+  resources :users, only: [:index, :show, :edit, :update, :destroy] 
 
   resources :users, controller: "clearance/users", only: [:create] do
     resource :password,
@@ -22,6 +22,8 @@ root "users#welcome"
   
   get '/auth/facebook', as: :facebook
   get "/auth/facebook/callback" => "sessions#create_from_omniauth"
+  get 'search', to: 'search#search'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

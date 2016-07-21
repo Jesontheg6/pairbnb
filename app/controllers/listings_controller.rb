@@ -33,10 +33,11 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:name, :price, :address, :country, :occupancy, :user_id, :tag_list)
+    params.require(:listing).permit(:name, :price, :address, :country, :occupancy, :user_id, :tag_list, {avatars:[]})
   end
 
   def set_listing
     @listing = Listing.find(params[:id])
   end
 end
+

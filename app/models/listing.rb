@@ -1,7 +1,14 @@
+require 'elasticsearch/model'
+
 class Listing < ActiveRecord::Base
 	belongs_to :user
 	has_many :taggings
 	has_many :tags, through: :taggings
+
+	include Elasticsearch::Model
+    include Elasticsearch::Model::Callbacks
+
+	mount_uploaders :avatars, AvatarUploader
 
 	def tag_list
   		self.tags.collect do |tag|
@@ -16,3 +23,5 @@ class Listing < ActiveRecord::Base
   		self.tags = new_or_found_tags
 	end
 end
+
+Listing.import # for auto sync model with elastic search

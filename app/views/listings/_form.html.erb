@@ -8,9 +8,12 @@
   <br><h4>Occupancy:</h4><%= form.number_field :occupancy %></br>
   
 
-<p>
+<h4>
   <%= form.label :tag_list %></br>
   <%= form.text_field :tag_list %>
-</p>
+</h4>
+
+<%= form.file_field :avatars, multiple: true %>
+
 <br><%= form.submit %></br>
 <% end %>

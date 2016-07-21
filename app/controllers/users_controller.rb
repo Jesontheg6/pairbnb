@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	def index
+	@listings = Listing.all
 	render :welcome
 	end
 
