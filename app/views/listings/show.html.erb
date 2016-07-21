@@ -1,0 +1,14 @@
+<h2><%= @listing.name %></h2>
+<h4>Price: $<%= @listing.price %></h4>
+<h4>Country: <%= @listing.country %></h4>
+<h4>Occupancy: <%= @listing.occupancy %></h4>
+<h4>Owner: <%= User.find(@listing.user_id).name %></h4>
+
+<h4>Address: <%= @listing.address %></h4>
+
+<p>
+  Tags:
+  <% @listing.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>

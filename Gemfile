@@ -55,3 +55,6 @@ gem "figaro"
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+#geolocation
+gem 'geocoder'
+

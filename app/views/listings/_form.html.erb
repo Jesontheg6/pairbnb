@@ -1,0 +1,16 @@
+<h2> Create Listing </h2>
+
+<%= form_for @listing do |form| %>
+  <br><h4>Name:</h4><%= form.text_field :name %></br>
+  <br><h4>Price:USD</h4><%=form.number_field :price %></br>
+  <br><h4>Address:</h4><%= form.text_field :address %></br>
+  <br><h4>Country:</h4><%= form.text_field :country %></br>
+  <br><h4>Occupancy:</h4><%= form.number_field :occupancy %></br>
+  
+
+<p>
+  <%= form.label :tag_list %><br />
+  <%= form.text_field :tag_list %>
+</p>
+<br><%= form.submit %></br>
+<% end %>

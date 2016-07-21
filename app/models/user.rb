@@ -1,10 +1,12 @@
 class User < ActiveRecord::Base
+has_many :listings
   include Clearance::User
     has_many :authentications, :dependent => :destroy
 
   def self.create_with_auth_and_hash(authentication,auth_hash)
     create! do |u|
-      u.first_name = auth_hash["info"]["first_name"]
+      u.password = SecureRandom.hex(10)
+      u.name = auth_hash["info"]["name"]
       u.email = auth_hash["extra"]["raw_info"]["email"]
       u.authentications<<(authentication)
     end
