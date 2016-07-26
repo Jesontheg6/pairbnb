@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 has_many :listings
+has_many :reservations
   include Clearance::User
     has_many :authentications, :dependent => :destroy
 

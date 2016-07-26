@@ -1,0 +1,23 @@
+<div class="hero-header">
+  <div class="main-text">Pair BnB</div>
+  <div class="sub-text">A place to find your next home</div>
+</div>
+
+<center>
+= form_tag root_path, class: "form-inline", method: :get do
+  .form-group
+    = text_field_tag :query, params[:query], class: "form-control"
+  '
+  = submit_tag "Search", class: "btn btn-primary"
+  - if params[:query].present?
+    '
+    = link_to "clear", root_path
+
+</center>
+
+
+<center>
+- @listings.each do |listing|
+  br
+  = link_to listing.name, listing
+</center>

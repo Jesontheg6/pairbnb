@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :set_listing, only: [:show, :edit, :update]
+  before_action :require_login
 
   def new
     @listing = Listing.new
@@ -24,9 +26,6 @@ class ListingsController < ApplicationController
   def destroy
   end
 
-  def index
-    @listings = Listing.all
-  end
 
   def show
 
@@ -39,5 +38,19 @@ class ListingsController < ApplicationController
   def set_listing
     @listing = Listing.find(params[:id])
   end
+
+  def index
+    @listings = Listing.all
+    render :index
+  end
+
+  def home
+    if params[:query].present?
+      @listings = Listing.search(params[:query])
+    else
+      @listings = Listing.all
+    end
+  end
+
 end
 
