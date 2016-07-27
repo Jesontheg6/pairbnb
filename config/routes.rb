@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
   resources :listings
   resources :tags
+  resources :reservations
    
  
 
@@ -24,6 +25,11 @@ root "listings#home"
   get "/auth/facebook/callback" => "sessions#create_from_omniauth"
   get 'search', to: 'search#search'
 
+concern :paginatable do
+  get '(page/:page)', :action => :index, :on => :collection, :as => ''
+end
+
+resources :my_resources, :concerns => :paginatable
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

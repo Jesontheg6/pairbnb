@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+ acts_as_booker
 has_many :listings
 has_many :reservations
   include Clearance::User

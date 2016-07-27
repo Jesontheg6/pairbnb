@@ -45,6 +45,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_bookable (0.1.2)
+      activerecord (>= 3.2, < 5)
+      ice_cube_chosko (~> 0.1.0)
     arel (6.0.3)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
@@ -85,6 +88,7 @@ GEM
       activesupport (>= 4.1.0)
     hashie (3.4.4)
     i18n (0.7.0)
+    ice_cube_chosko (0.1.0)
     jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -94,6 +98,9 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.4)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -202,6 +209,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_bookable
   byebug
   carrierwave!
   clearance
@@ -210,6 +218,7 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   mini_magick
   omniauth
   omniauth-facebook

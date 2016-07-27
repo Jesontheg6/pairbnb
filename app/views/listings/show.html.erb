@@ -13,6 +13,8 @@
   <% end %>
 </h4>
 
+<%= link_to "Make reservation", new_reservation_path(listing_id: @listing.id) %>
+
 <div class="image-div container">
 
   <% if @listing.avatars?%>

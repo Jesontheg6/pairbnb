@@ -1,8 +1,6 @@
 class ListingsController < ApplicationController
-  before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :set_listing, only: [:show, :edit, :update]
-  before_action :require_login
-
+ 
   def new
     @listing = Listing.new
   end
@@ -41,6 +39,7 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
+    @listings = Listing.order(:name).page params[:page]
     render :index
   end
 

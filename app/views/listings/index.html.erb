@@ -2,3 +2,5 @@
 <% @listings.each do |listing| %>
 <br><%= link_to listing.name, listing_path(listing) %></br>
 <% end %>
+
+<%= paginate @listings %>

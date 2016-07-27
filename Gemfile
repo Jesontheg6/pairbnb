@@ -68,3 +68,9 @@ gem 'searchkick'
 #use of slim
 gem 'slim'
 
+#booking plugin
+gem 'acts_as_bookable'
+
+#paginate
+gem 'kaminari'
+

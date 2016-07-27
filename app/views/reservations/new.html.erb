@@ -1,0 +1,12 @@
+<h2> Make Reservation </h2>
+
+<%= form_for @reservation do |form| %>
+  <%= form.hidden_field :user_id, :value => current_user.id %>
+  <%=form.hidden_field :listing_id, :value => @listing.id  %>
+  <h4>Start date:</h4><%= form.date_field :start_date %><br>
+  <h4>End date:</h4><%= form.date_field :end_date %><br>
+  <h4>Number of occupants:</h4><%= form.number_field :occupants %><br>
+  <h4>Comments:</h4><%= form.text_field :comments %>
+
+<br><%= form.submit %></br>
+<% end %>
