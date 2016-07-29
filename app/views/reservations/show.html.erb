@@ -1,2 +1,4 @@
 <h4>Your reservation is made. Thank you </h4>
 
+<%= link_to 'Pay Now', new_payment_path + "?id=" + @reservation.id.to_s %>
+

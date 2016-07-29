@@ -74,3 +74,9 @@ gem 'acts_as_bookable'
 #paginate
 gem 'kaminari'
 
+#background jobs for emails
+gem 'sidekiq'
+
+#payments
+gem 'braintree'
+

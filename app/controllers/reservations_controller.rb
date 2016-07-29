@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
 				@listing.blocked_dates).empty? && @reservation.save
 		flash[:notice]="booking successful"
 		#Tell the ReservationMailer to send a welcome email after save
-		ReservationMailer.booking_email(@reservation.user, @listing.user, @reservation.id).deliver_now
+		ReservationMailer.delay.booking_email(@reservation.user, @listing.user, @reservation.id)
 		redirect_to @reservation
 		else 
 		flash[:notice]="booking unsuccessful: check that dates are not already booked?"
@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
 	end
 
 	def show
-
+		@reservation = Reservation.find(params[:id])
 	end
 
 	def reservation_params

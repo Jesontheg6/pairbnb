@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'payments/new'
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
   resources :users, only: [:index, :show, :edit, :update, :destroy] 
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
   resources :listings
   resources :tags
   resources :reservations
+  resources :payments, only: [:new, :create]
    
  
 
